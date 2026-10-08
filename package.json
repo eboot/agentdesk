@@ -1,0 +1,1 @@
+{"author":"","description":"Satu aplikasi desktop untuk banyak agen AI — tiap agen punya peran dan instruksi sendiri","devDependencies":{"electron":"^34.0.0"},"license":"MIT","main":"main.js","name":"agentdesk","scripts":{"start":"electron ."},"version":"1.0.0"}

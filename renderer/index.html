@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentDesk</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- LAYAR SETUP (muncul saat pertama kali dibuka) -->
+<div id="setup" class="hidden">
+  <div class="setup-card">
+    <h1>🤖 AgentDesk</h1>
+    <p class="muted">Satu aplikasi untuk semua agen AI kamu. Hubungkan ke penyedia AI untuk mulai.</p>
+    <div class="presets">
+      <button class="preset" data-preset="openai"><strong>OpenAI</strong><span>api.openai.com</span></button>
+      <button class="preset" data-preset="ollama"><strong>Ollama (lokal)</strong><span>localhost:11434 · gratis</span></button>
+      <button class="preset" data-preset="custom"><strong>Kustom</strong><span>9Router / lainnya</span></button>
+    </div>
+    <label>Base URL
+      <input id="su-base" placeholder="https://api.openai.com/v1" autocomplete="off">
+    </label>
+    <label>API Key
+      <input id="su-key" type="password" placeholder="sk-... (isi &quot;ollama&quot; untuk Ollama lokal)" autocomplete="off">
+    </label>
+    <label>Model default
+      <input id="su-model" placeholder="gpt-4o-mini" autocomplete="off">
+    </label>
+    <div class="row">
+      <button id="su-test" class="ghost">Tes koneksi</button>
+      <button id="su-start" class="primary">Mulai →</button>
+    </div>
+    <p id="su-msg" class="muted"></p>
+    <p class="muted small">Contoh kustom (server 9Router kamu):<br>
+      <code>https://kabe9router.pages.dev/v1</code> + model <code>muse-spark</code></p>
+  </div>
+</div>
+
+<!-- APLIKASI UTAMA -->
+<div id="app" class="hidden">
+  <aside id="sidebar">
+    <div class="side-search"><input id="agent-search" placeholder="🔍 Cari agen..." autocomplete="off"></div>
+    <div id="agent-list"></div>
+    <div class="side-footer">
+      <button id="btn-new-agent" class="ghost">＋ Agen baru</button>
+      <button id="btn-settings" class="ghost">⚙ Pengaturan</button>
+    </div>
+  </aside>
+  <main id="main">
+    <header id="chat-header"></header>
+    <div id="messages"></div>
+    <div id="composer">
+      <textarea id="input" rows="1" placeholder="Tulis pesan untuk agen ini... (Enter = kirim, Shift+Enter = baris baru)"></textarea>
+      <button id="btn-send" class="primary" title="Kirim">➤</button>
+    </div>
+  </main>
+</div>
+
+<div id="modal-root"></div>
+<script src="app.js"></script>
+</body>
+</html>
