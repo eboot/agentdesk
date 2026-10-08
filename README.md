@@ -20,7 +20,7 @@ Aplikasi ini memakai API yang **OpenAI-compatible** — satu kunci untuk semua a
 |---|---|---|---|
 | OpenAI | `https://api.openai.com/v1` | `sk-...` | `gpt-4o-mini` |
 | Ollama (lokal, gratis) | `http://localhost:11434/v1` | `ollama` | `llama3.1` |
-| Kustom / 9Router | `https://kabe9router.pages.dev/v1` | API key 9Router kamu | `muse-spark` |
+| Kustom / 9Router | `https://127.0.0.1/v1` | API key 9Router kamu | `muse-spark` |
 
 Untuk Ollama, jalankan dulu `ollama serve` dan `ollama pull llama3.1` di terminal.
 Tombol **Tes koneksi** memastikan setting benar sebelum mulai.
